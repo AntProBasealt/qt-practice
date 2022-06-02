@@ -9,8 +9,8 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-QString emailRange = "([a-z0-9_-]+.)*[a-z0-9_-]+@[a-z0-9_-]+(.[a-z0-9_-])*.[a-z]{2,6}";
-QRegExp emailRegex ("^" + emailRange + "$");
+QString emailRange = "^[A-Za-z0-9]+([A-Za-z0-9._-]+)*[A-Za-z0-9]@[A-Za-z0-9]+\.[A-Za-z]{2,4}$";
+QRegExp emailRegex (emailRange);
 
 QRegExpValidator *emailValidator = new QRegExpValidator(emailRegex, this);
 ui->lineEdit->setValidator(emailValidator);
