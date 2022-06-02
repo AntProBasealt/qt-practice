@@ -40,8 +40,6 @@ else()
     mainwindow.cpp
     mainwindow.h
     mainwindow.ui
-    Tray.pro
-    pngtree.png
   )
 endif()
 

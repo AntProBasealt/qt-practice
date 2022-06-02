@@ -9,7 +9,6 @@ MainWindow::MainWindow(QWidget *parent)
     this->setWindowTitle("Tray Program");
 
     trayIcon = new QSystemTrayIcon(this);
-    //trayIcon->setIcon(this->style()->standardIcon(QStyle::SP\_ComputerIcon));
     trayIcon->setToolTip("Tray Program" "\n"
                          "Работа со сворачиванием программы в трей");
 
