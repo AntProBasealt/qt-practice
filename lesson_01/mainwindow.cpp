@@ -9,10 +9,10 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-QString ipRange = "([a-z0-9_-]+.)*[a-z0-9_-]+@[a-z0-9_-]+(.[a-z0-9_-])*.[a-z]{2,6}";
-QRegExp ipRegex ("^" + ipRange + "$");
+QString emailRange = "([a-z0-9_-]+.)*[a-z0-9_-]+@[a-z0-9_-]+(.[a-z0-9_-])*.[a-z]{2,6}";
+QRegExp emailRegex ("^" + emailRange + "$");
 
-QRegExpValidator *emailValidator = new QRegExpValidator(ipRegex, this);
+QRegExpValidator *emailValidator = new QRegExpValidator(emailRegex, this);
 ui->lineEdit->setValidator(emailValidator);
 
 }
