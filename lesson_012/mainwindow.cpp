@@ -7,9 +7,8 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    keyCAE = new QShortcut(this);   // Инициализируем объект
-    keyCAE->setKey(Qt::CTRL + Qt::ALT + Qt::Key_Enter);    // Устанавливаем код клавиши
-    // цепляем обработчик нажатия клавиши
+    keyCAE = new QShortcut(this);
+    keyCAE->setKey(Qt::CTRL + Qt::ALT + Qt::Key_Enter);
     connect(keyCAE, SIGNAL(activated()), this, SLOT(slotShortcutCAE()));
 
 //    keyAltQ = new QShortcut(this); // Инициализируем объект
@@ -17,9 +16,8 @@ MainWindow::MainWindow(QWidget *parent)
 //    // подключаем обработчик нажатия клавиши
 //    connect(keyAltQ, SIGNAL(activated()), this, SLOT(slotShortcutAltQ()));
 
-    keyAltQ = new QShortcut(this); // Инициализируем объект
-    keyAltQ->setKey(Qt::ALT + Qt::Key_Q); // Устанавливаем сочетание клавиш
-    // подключаем обработчик нажатия клавиши
+    keyAltQ = new QShortcut(this);
+    keyAltQ->setKey(Qt::ALT + Qt::Key_Q);
     connect(keyAltQ, &QShortcut::activated, this, &QMessageBox::show);
 }
 
@@ -28,13 +26,8 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-/* Слот для обработки нажатия клавиши F11
- * */
 void MainWindow::slotShortcutCAE()
 {
-    /* В этом обработчике сделаем переключение приложения
-     * в полноэкранный режим и обратно в нормальный режим окна
-     * */
     if(this->isFullScreen()){
         this->showNormal();
     } else {
@@ -42,15 +35,8 @@ void MainWindow::slotShortcutCAE()
     }
 }
 
-/* Слот для обработки сочетания клавиш Ctrl + D
- * */
 void MainWindow::slotShortcutAltQ()
 {
-    /* Для обработки сочетания клавив Ctrl + D
-     * сделаем информационный MessageBox,
-     * который будет сигнализировать о том, что было нажато данное
-     * сочетание клавиш
-     * */
     QMessageBox::information(this,
                              "Горячая клавиша",
                              "Мои поздравления!!! Горячая клавиша работает",

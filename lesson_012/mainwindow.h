@@ -19,13 +19,12 @@ public:
     ~MainWindow();
 
 private slots:
-    // слоты для обработки нажатий горячих клавиш
     void slotShortcutCAE();
     void slotShortcutAltQ();
 
 private:
     Ui::MainWindow  *ui;
-    QShortcut       *keyCAE;    // объект горячей клавиши F11
-    QShortcut       *keyAltQ;  // объект сочетания клавиш Ctrl + D
+    QShortcut       *keyCAE;
+    QShortcut       *keyAltQ;
 };
 #endif // MAINWINDOW_H
